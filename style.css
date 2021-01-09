@@ -1,0 +1,207 @@
+.jumbotron {
+    text-align: center;
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(liveworkplayhome.jpg); */
+    box-shadow: inset 0 -19px 0 28px rgba(0,0,0,0.15);
+}
+
+
+.display-4{
+    color:black;
+}
+
+.lead{
+    color: black;
+    font-weight:700 !important;
+    width:65% !important; 
+    margin-left:auto; 
+    margin-right:auto; 
+}
+
+.brand-logo {
+    line-height: 56px;
+}
+
+.brand-logo img {
+    height: 50px;
+}
+/* ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+  }  */
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+
+
+#map {
+    height: 400px;
+    width: 80%;
+
+    margin-left: auto;
+    clear: both;
+    margin-right: auto;
+
+    
+}
+
+.listingContainer{
+    border: 1px black solid;
+
+    margin: 2%;
+    width: 90%;
+    float: left;
+    padding: 2%;
+    border-radius: 10px;
+    background:white;
+    box-shadow: darkgray 0px 0px 20px;
+  
+}
+
+.linkToZomatoSite {
+    display: block;
+    margin: 5%;
+    width: 81%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+#areaInfo {
+    margin-right: 5%;
+    float: right;
+    width: 80%;
+    height: 25%;
+
+}
+
+.search-container {
+    /* width: 58%; */
+   
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+}
+
+.container{
+    padding: 50px;
+    text-align: left;
+    font-size: 25px;
+
+    
+}
+/*
+.parallax-container {
+    padding-top:3%; 
+    position:static !important;
+}*/
+  
+body::before {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
+}
+
+body {
+    background-image:url("liveworkplayhome.jpg"); 
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+ 
+input[type="text"]{
+    width: 20% !important;
+    padding-left:5px !important;
+    margin-left:3px;
+    margin: 0px !important;
+    background: white !important
+}
+
+  
+button{
+    border: 1px solid #111010;
+    color: rgb(20, 20, 20);
+    display: inline-block;
+    font-size: 16px;
+    height: 60px;
+  }
+
+  .btn {
+      height:3rem!important;
+      offset: right;
+  }
+
+  #address {
+      width:35% !important; 
+  }
+#state{
+    width:10% !important; 
+}
+
+#zip{
+    width:15% !important; 
+}
+
+
+
+.dl-footer {
+    background-color:#ee6e73;
+    width: 100%;
+    clear:both; 
+    position:static; 
+    bottom:0;
+    
+}
+.dl-footer-left{
+    width:50%; 
+}
+.miniMap{
+    float: right;
+    width: 50%;
+    height: 15rem;
+}
+
+.listingContent{
+    width: 45%;
+    float: left;
+}
+
+.zomatoATag{
+    cursor: pointer;
+    color: blue;
+}
+
+
+.dl-footer-content {
+    padding:15px; 
+    width: 50%;
+    float: left;
+    background-color: #ee6e73;
+    bottom: 0;
+}
+    h2, p{
+    color: gray
+
+    }
+   .team-img{
+       width: 320px;
+       height:320px;
+   }
+   .team{
+       position: static
+   }

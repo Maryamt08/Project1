@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recreation Maps</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+  integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+</script>
+
+  <link rel = "stylesheet"  href = "https://fonts.googleapis.com/icon?family=Material+Icons">  
+  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">  
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper scrollspy" id="Home">
+      <div class="col s12">
+        <a href="#" class="brand-logo">
+          <img src="logo.jpg"/>
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="./contact.html">Our Team</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="liveworkplayhome.jpg" class="responsive-img"></img>
+    </div>
+  </div>
+
+  <div class="overlay text-center section white">
+    <h1 class="display-4">FIND THE PERFECT HOME FOR YOU</h1>
+    <p class="lead"> Keep the party going by finding a great place to live nearby! ENTER the name, address, city, state or zip code of your favorite gym, or
+      bar and we will help you find avaible homes in the area.
+    </p>
+    <div class="search-container">
+      <input type="text" id="address" placeholder="Street address">
+      <input type="text" id="city" placeholder="City">
+      <input type="text" id="state" placeholder="State">
+      <input type="text" id="zip" placeholder="Zip Code">
+      <button id="button" class="btn">Search</button>
+    </div>
+  </div>
+
+  <div class="parallax-container" id="">
+    <div class="parallax">
+      <img src="lwp2.jpg" class="responsive-img"></img>
+    </div>
+  </div>
+  <!-- Webpage Header -->
+
+
+  <div class="">
+
+<!-- // DBL comment  -->
+    
+
+
+  <div id="map"></div>
+
+  <div id="areaInfo"></div>
+
+  <div id="testView"></div>
+
+  <!-- Our Team
+  <div class=" overlay text-center section white">
+  <section class="section scrollspy" id="OurTeam" >
+    <div class="row">
+      <div class="col s6">
+        <img src="MC Team.jpg" alt="" class="team-img"></img>
+      </div>
+      <div class= "col s6">
+        <h2>Macenna Cowen</h2>
+        <p> Macenna Cowen is a student at the George Washington University, expected to graduate in 2021. 
+            Majoring in geography and minoring in statistics with a growing knowledge in website development. 
+            I enjoy analytics, the environment, and spreading my sustainability ideas through user-friendly interfaces. </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <h2>Maryam Tahir</h2>
+        <p> Maryam Tahir joined George Washington University Coding Bootcamp in October of 2020. 
+            She has a background in Government and analytics. 
+            She enjoys the challenges that coding brings and would like to start a career in web development!</p>
+      </div>
+      <div class="col s6">
+        <img src="MT Team.jpg" alt="" class="team-img"></img>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <img src="AH Team.jpg" alt="" class="team-img"></img>
+      </div>
+      <div class="col s6">
+        <h2>Andrew Hinrichs</h2>
+        <p>Andrew Hinrichs is a student in George Washington University's code bootcamp. 
+           He  is currently working in the telecom industry and is developing an indie game in his freetime. 
+           Andy hopes to break into web development soon!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <h2>Danielle Latortue </h2>
+        <p> Danielle Latortue joined the GWU Coding Bootcamp in 2020.  
+            She has a backgeround in asset management and looks forward to a career pivot in the near future. 
+            Danielle is passionate about all of the great comforts of life: home, food, and great entertainment.
+           </p>
+      </div>
+      <div class="col s6">
+           <img src="Dani.JPG" alt="" class="team-img"></img>
+      </div>
+    </div>
+  </section>
+  </div> -->
+
+
+<script src="./script.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+</script>
+
+<script>
+$(".parallax").parallax();
+function activatePlacesSearch(){
+var input = document.getElementById('address');
+var autocomplete = new google.maps.places.Autocomplete(input); 
+autocomplete.addListener("place_changed", () => {
+  const place = autocomplete.getPlace();
+  if (place && place.geometry){
+  
+  let address = place.formatted_address.split(","); 
+  let street = address[0];
+  let city = address[1].trim();
+  let state= address[2].trim().split(" ")[0];
+  let zip = address[2].trim().split(" ")[1];
+  $("#zip").val(zip); 
+  $("#state").val(state); 
+  $("#city").val(city); 
+  $("#address").val(street); 
+  }
+ 
+});
+
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrxEcluCzhCTl5OOc6Ow5hu6kNd4TOQOo&libraries=places&callback=activatePlacesSearch"
+type="text/javascript"></script>
+
+
+
+  </div>
+
+  <div class='dl-footer'> 
+    
+    <div class="dl-footer-content"> 
+          <h3 id= "About" class="scrollspy" >About Us</h3> 
+        <ul>
+          <p>The importance of a night out is often immeasurable. So when the mood strikes, what better place to start your night than at your place, conveniently located only a few blocks from all of the action?
+            At Recreation Maps, we can help you make that a reality. Simply type in the address of your favorite bar, club, or location and we will show you a list of rentals within walking distance.
+          </p>
+          
+        </ul>
+      </div>
+
+      <div class="dl-footer-content"> 
+      <h3 id="Contact" class= "scrollspy">Connect With Us</h3> 
+        <ul>
+          <li>123 Main St SE Washington, DC 20003</li>
+          <li>202.555.5555</li>
+          <li>connect@recmaps.com</li>
+        </ul>
+      </div>
+
+  </div> 
+
+  
+
+
+
+
+  <!-- Linked Script tags 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  -->
+
+
+
+
+
+  
+
+
+
+  
+</body>
+
+</html>
